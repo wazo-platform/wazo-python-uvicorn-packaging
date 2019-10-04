@@ -5,8 +5,6 @@ Maintainer: Wazo Maintainers <dev+pkg@wazo.community>
 Build-Depends:
  debhelper (>= 12),
  dh-python,
- docbook-to-man,
- mkdocs (>= 1.0.4),
  python3-all,
  python3-click,
  python3-h11,
@@ -17,28 +15,8 @@ Build-Depends:
  python3-uvloop,
  python3-websockets,
  python3-wsproto,
-Standards-Version: 4.3.0
-Homepage: https://github.com/encode/uvicorn/
-Vcs-Browser: https://salsa.debian.org/python-team/modules/python-uvicorn
-Vcs-Git: https://salsa.debian.org/python-team/modules/python-uvicorn.git
-Testsuite: autopkgtest-pkg-python
-
-Package: python-uvicorn-doc
-Section: doc
-Architecture: all
-Depends:
- ${misc:Depends},
- ${mkdocs:Depends},
-Description: ASGI server implementation, using uvloop and httptools (Documentation)
- Uvicorn is a fast ASGI server, built on uvloop and httptools. It currently
- supports HTTP/1.1 and WebSockets.
- .
- Uvicorn is designed with particular attention to connection and resource
- management, in order to provide a robust server implementation. It aims to
- ensure graceful behavior to either server or client errors, and resilience to
- poor client behavior or denial of service attacks.
- .
- This package contains the documentation.
+Standards-Version: 3.9.6
+X-Python3-Version: >= 3.7
 
 Package: python3-uvicorn
 Architecture: all
@@ -46,10 +24,6 @@ Depends:
  python3-wsproto,
  ${misc:Depends},
  ${python3:Depends},
-Suggests:
- python-uvicorn-doc,
-Enhances:
- python3-gunicorn,
 Description: ASGI server implementation, using uvloop and httptools (Python3 version)
  Uvicorn is a fast ASGI server, built on uvloop and httptools. It currently
  supports HTTP/1.1 and WebSockets.
@@ -60,24 +34,3 @@ Description: ASGI server implementation, using uvloop and httptools (Python3 ver
  poor client behavior or denial of service attacks.
  .
  This package contains the Python 3 version of the library.
-
-Package: uvicorn
-Architecture: all
-Section: httpd
-Depends:
- python3-uvicorn (= ${binary:Version}),
- ${misc:Depends},
- ${python3:Depends},
-Suggests:
- python-uvicorn-doc,
-Description: ASGI server implementation, using uvloop and httptools
- Uvicorn is a fast ASGI server, built on uvloop and httptools. It currently
- supports HTTP/1.1 and WebSockets.
- .
- Uvicorn is designed with particular attention to connection and resource
- management, in order to provide a robust server implementation. It aims to
- ensure graceful behavior to either server or client errors, and resilience to
- poor client behavior or denial of service attacks.
- .
- This package contains the CLI script.
-

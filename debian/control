@@ -6,6 +6,12 @@ Build-Depends:
  debhelper (>= 12),
  dh-python,
  python3-all,
+ Standards-Version: 3.9.6
+X-Python3-Version: >= 3.7
+
+Package: python3-uvicorn
+Architecture: all
+Depends:
  python3-click,
  python3-h11,
  python3-httptools,
@@ -14,13 +20,6 @@ Build-Depends:
  python3-setuptools,
  python3-uvloop,
  python3-websockets,
- python3-wsproto,
-Standards-Version: 3.9.6
-X-Python3-Version: >= 3.7
-
-Package: python3-uvicorn
-Architecture: all
-Depends:
  python3-wsproto,
  ${misc:Depends},
  ${python3:Depends},

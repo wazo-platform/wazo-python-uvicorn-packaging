@@ -5,7 +5,8 @@ Maintainer: Wazo Maintainers <dev+pkg@wazo.community>
 Build-Depends:
  debhelper (>= 12),
  dh-python,
- python3-all
+ python3-all,
+ python3-setuptools
 Standards-Version: 3.9.6
 X-Python3-Version: >= 3.7
 
@@ -17,7 +18,6 @@ Depends:
  python3-httptools,
  python3-pytest,
  python3-requests,
- python3-setuptools,
  python3-uvloop,
  python3-websockets,
  python3-wsproto,
